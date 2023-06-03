@@ -1,6 +1,12 @@
 services:
   - docker
 
+before_install:
+  - docker build -t loversky01/microservices -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true loversky01/microservices npm test -- --coverage
+
 after_success:
   - docker build -t phmclong/client_service ./client
   - docker build -t phmclong/nginx_service ./nginx
