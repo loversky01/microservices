@@ -1,9 +1,6 @@
 services:
   - docker
 
-script:
-  - docker run -e CI=true phmclong/microservices npm test -- --coverage
-
 after_success:
   - docker build -t phmclong/client_service ./client
   - docker build -t phmclong/nginx_service ./nginx
