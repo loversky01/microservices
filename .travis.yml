@@ -1,8 +1,7 @@
-language: node_js
 services:
   - docker
 
-after_success:
+before_install:
   - docker build -t phmclong/client_service ./client
   - docker build -t phmclong/nginx_service ./nginx
   - docker build -t phmclong/server_service ./server
