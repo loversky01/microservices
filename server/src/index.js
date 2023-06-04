@@ -1,4 +1,4 @@
-const keys = require("./keys");
+// const keys = require("./keys");
 
 // Express App Setup
 const express = require("express");
@@ -28,8 +28,8 @@ const accessLogStream = fs.createWriteStream(
 
 const app = express();
 app.disable("x-powered-by");
-// const port = keys.appPort || 8081;
-const port = 5000;
+const port = keys.appPort || 8081;
+// const port = 8081;
 
 app.use(compression());
 app.use(morgan("combined", { stream: accessLogStream }));
