@@ -4,6 +4,9 @@ services:
 before_install:
   - travis_wait 30 docker build -t phmclong/microservices -f ./client/Dockerfile.dev ./client
 
+script:
+  - travis_wait 30 docker run -e CI=true phmclong/microservices npm test -- --coverage
+
 after_success:
   - docker build -t phmclong/client_service ./client
   - docker build -t phmclong/nginx_service ./nginx
