@@ -72,4 +72,4 @@ app.get("/", (req, res) => {
   // res.sendFile(path.join(__dirname + '../../client/build/index.html'));
   res.status(200).send("Hi express");
 });
-app.listen(port, () => console.log(`app is running in PORT: ${port}`));
+app.listen(port, () => console.log(`app is runninssssg in PORT: ${port}`));
